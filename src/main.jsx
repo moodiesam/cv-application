@@ -1,10 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
+import PersonalInfo from './components/personalInfo'
+import Display from './components/display'
+import Section from './components/bodySection'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <Display>
+      <PersonalInfo />
+      <Section />
+    </Display>
   </React.StrictMode>,
 )

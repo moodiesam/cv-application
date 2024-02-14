@@ -1,0 +1,5 @@
+.mainDisplay {
+    max-width: 1200px;
+    min-height: 90vh;
+    border: 3px solid black;
+}
