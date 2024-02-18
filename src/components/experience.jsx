@@ -1,17 +1,16 @@
 import { useState } from "react";
-import '../styles/education.css'
 
 let nextID = 0;
 
-export default function EducationSection() {
+export default function ExperienceSection() {
     const [entry, setEntry] = useState({
         name: '',
-        level: '',
+        position: '',
         start: '',
         finish: ''
     })
 
-    const [eduEntries, setEduEntries] = useState([]);
+    const [expEntries, setExpEntries] = useState([]);
 
     function handleNameChange(e) {
         setEntry({
@@ -20,10 +19,10 @@ export default function EducationSection() {
         })
     }
 
-    function handleLevelChange(e) {
+    function handlePositionChange(e) {
         setEntry({
             ...entry,
-            level: e.target.value
+            position: e.target.value
         })
     }
 
@@ -46,29 +45,29 @@ export default function EducationSection() {
     return (
         <main>
             <header className="sectionHeader">
-                <h2>Education</h2>
+                <h2>Experience</h2>
             </header>
             <form className="entryForm" >
                 <label>
-                    School Name:
+                    Company Name:
                     <input
-                        id="schoolName"
+                        id="companyName"
                         value={entry.name}
                         onChange={handleNameChange}
                     />
                 </label>
                 <label>
-                    Level of Education:
+                    Position held:
                     <input
-                        id="schoolLevel"
-                        value={entry.level}
-                        onChange={handleLevelChange}
+                        id="experiencePosition"
+                        value={entry.position}
+                        onChange={handlePositionChange}
                     />
                 </label>
                 <label>
                     Start Date:
                     <input
-                        id="schoolStart"
+                        id="experienceStart"
                         value={entry.start}
                         onChange={handleStartChange}
                     />
@@ -76,18 +75,18 @@ export default function EducationSection() {
                 <label>
                     Finish Date:
                     <input
-                        id="schoolFinish"
+                        id="experienceFinish"
                         value={entry.finish}
                         onChange={handleFinishChange}
                     />
                 </label>
                 <button onClick={(e) => {
                     e.preventDefault();
-                    setEduEntries([
-                        ...eduEntries,
+                    setExpEntries([
+                        ...expEntries,
                         {id: nextID++,
                         name: entry.name,
-                        level: entry.level,
+                        position: entry.position,
                         start: entry.start,
                         finish: entry.finish
                         }
@@ -96,9 +95,9 @@ export default function EducationSection() {
                 }}>Add Entry</button>
             </form>
             <ul>
-                {eduEntries.map(entry => (
+                {expEntries.map(entry => (
                     <li key={entry.id}>
-                        {entry.name} {entry.level} {entry.start} {entry.finish} 
+                        {entry.name} {entry.position} {entry.start} {entry.finish} 
                     </li>
                 ))}
             </ul>
