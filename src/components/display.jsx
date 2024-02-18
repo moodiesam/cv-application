@@ -3,8 +3,8 @@ import '../styles/display.css'
 
 export default function Display({ children }) {
     return (
-        <body className="mainDisplay">
+        <div className="mainDisplay">
             {children}
-        </body>
+        </div>
     )
 }

@@ -1,5 +1,11 @@
-.header {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.entryForm {
+    display: flex;
+    flex-direction: row;
     border: 1px solid red;
+}
+
+.infoDisplay {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
